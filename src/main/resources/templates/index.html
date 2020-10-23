@@ -1,0 +1,97 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang = "en-us" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="UTF-8" />
+        <title>Terms Application</title>
+    </head>
+
+    <body>
+
+        <div>
+            Header
+        </div>
+
+        <div>
+            Menu: {Add term/source, search terms/sources}
+        </div>
+
+       <!--  <div id="sourceForm" >
+            Add Source Form: {add multiple authors }
+            <form action="#" th:action="@{/index}" th:object="${SourceModel}" method="post" >
+                <fieldset>
+                    <label>author first name:</label>
+                    <input type="text" name="authorFirstName" th:field="*{authorFirstName}" />
+
+                    <label>author last name:</label>
+                    <input type="text" name="authorLastName" th:field="*{authorLastName}" />
+
+                    <label>title of source:</label>
+                    <input type="text" name="sourceTitle" th:field="*{sourceTitle}" />
+
+                    <button name="submit" type="submit" value="0">Submit</button>
+                </fieldset>
+            </form>
+        </div> -->
+
+        <div id="sourceForm" >
+         Add Source Form: {add multiple authors }
+         <form action="#"  method="post" > //th:object="${SourceModel}"  //th:action="@{/index}"
+         <fieldset>
+             <label>author first name:</label>
+             <input type="text" name="authorFN" />  // th:field="*{authorFirstName}"
+
+             <label>author last name:</label>
+             <input type="text" name="authorLN" /> //th:field="*{authorLastName}"
+
+             <label>title of source:</label>
+             <input type="text" name="srcTitle" /> //th:field="*{sourceTitle}"
+
+             <button type="submit" />
+         </fieldset>
+        </form>
+        </div>
+
+        <div>
+            Source Test
+            <p th:text="${source.authorFirstName}">source</p>
+            <!-- <p th:text="${message}">source</p> -->
+        </div>
+
+        <div id="quoteForm">
+            Add Quote Form:
+            <form action ="#" >
+                <fieldset>
+                <label for="term">term: </label>
+                <input type="text" name="trm" id="term" />
+
+                <label for="definition">definition</label>
+                <input type="text" name="def" id="definition" />
+
+                <label for="fromPage">from page: </label>
+                <input type="text" name="frmPg" id="fromPage"/>
+
+                <label for="toPage">to page: </label>
+                <input type="text" name="toPg" id="toPage" />
+
+
+                <input type="submit" />
+                </fieldset>
+            </form>
+        </div>
+
+        <div>
+            This section will feature results of queries
+        </div>
+
+        <div>
+            Sample Source Output:
+            <!-- <p th:text="${obj.getAuthorFirstName()}" ></p> -->
+            <!-- <p th:text="${obj.getAuthorLastName()}" ></p> -->
+            <!-- <p th:text="${obj.getTitleOfSource()}" ></p> -->
+        </div>
+
+    </body>
+
+</html>
